@@ -46,7 +46,7 @@ module.exports = class UserController {
     if (password != confirmpassword) {
       res
         .status(422)
-        .json({ message: 'A senha e a confirmação precisam ser iguais!' })
+        .json({ message: 'As senhas precisam ser iguais!' })
       return
     }
 
@@ -164,7 +164,7 @@ module.exports = class UserController {
     let image = ''
 
     if (req.file) {
-      image = req.file.filename
+      user.image = req.file.filename
     }
 
     // validations
